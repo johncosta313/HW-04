@@ -1,0 +1,11 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+df_schools = pd.read_csv('raw_data/schools_complete.csv')
+df_students = pd.read_csv('raw_data/students_complete.csv')
+
+df_schools.rename_axis({'name':'school'},axis=1,inplace=True)
+df_school_summary = df_schools.copy()
+
+df_school_district = df_schools[df_schools['type'] == 'District']
